@@ -1,0 +1,23 @@
+<div class="employee-details-container" *ngIf="employee; else loading">
+  <h2>Employee Profile</h2>
+  <img [src]="employee.profile_picture" alt="Profile Picture" *ngIf="employee.profile_picture; else noImage" />
+  <ng-template #noImage>
+    <p>No Profile Picture</p>
+  </ng-template>
+  <div class="details">
+    <p><strong>First Name:</strong> <span>{{ employee.first_name }}</span></p>
+    <p><strong>Last Name:</strong> <span>{{ employee.last_name }}</span></p>
+    <p><strong>Email:</strong> <span>{{ employee.email }}</span></p>
+    <p><strong>Gender:</strong> <span>{{ employee.gender }}</span></p>
+    <p><strong>Designation:</strong> <span>{{ employee.designation }}</span></p>
+    <p><strong>Salary:</strong> <span>{{ employee.salary | currency }}</span></p>
+    <p><strong>Date of Joining:</strong> <span>{{ employee.date_of_joining | date }}</span></p>
+    <p><strong>Department:</strong> <span>{{ employee.department }}</span></p>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>Loading employee details...</p>
+</ng-template>
+
+<p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>

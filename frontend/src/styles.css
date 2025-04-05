@@ -1,0 +1,54 @@
+/* Global Styles */
+
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa; /* Light background for contrast */
+  color: #212529; /* Dark text for readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: #343a40; /* Darker heading color */
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.logout-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}

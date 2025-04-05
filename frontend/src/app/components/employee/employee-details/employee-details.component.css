@@ -1,0 +1,60 @@
+.employee-details-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.employee-details-container h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Add spacing between rows */
+}
+
+.details p {
+  margin: 0;
+  font-size: 16px;
+  color: #555555;
+  display: flex;
+  justify-content: space-between; /* Align label and value horizontally */
+  align-items: center; /* Vertically align label and value */
+}
+
+.details p strong {
+  font-weight: bold;
+  color: #333333;
+  width: 40%; /* Fixed width for labels */
+  text-align: right; /* Align labels to the right */
+  margin-right: 10px; /* Add spacing between label and value */
+}
+
+.details p span {
+  width: 60%; /* Fixed width for values */
+  text-align: left; /* Align values to the left */
+}
+
+img {
+  display: block;
+  margin: 20px auto;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.error {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}

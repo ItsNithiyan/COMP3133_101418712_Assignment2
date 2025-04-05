@@ -1,0 +1,45 @@
+<div class="employee-list-container">
+  <div class="header">
+    <h2>Employee List</h2>
+  </div>
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by department or designation"
+      [(ngModel)]="searchQuery"
+      (input)="searchEmployees()" />
+    <button class="search-btn" (click)="searchEmployees()">Search</button>
+    <a class="add-employee-btn" routerLink="/employees/add">Add Employee</a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Profile Picture</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.first_name }}</td>
+        <td>{{ employee.last_name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.designation }}</td>
+        <td>{{ employee.department }}</td>
+        <td>
+          <img [src]="employee.profile_picture" alt="Profile Picture" width="50" height="50" *ngIf="employee.profile_picture; else noImage" />
+          <ng-template #noImage>No Image</ng-template>
+        </td>
+        <td>
+          <a class="action-btn edit-btn" [routerLink]="['/employees/update', employee.id]">Edit</a>
+          <a class="action-btn view-btn" [routerLink]="['/employees/details', employee.id]">View</a>
+          <button class="action-btn delete-btn" (click)="deleteEmployee(employee.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

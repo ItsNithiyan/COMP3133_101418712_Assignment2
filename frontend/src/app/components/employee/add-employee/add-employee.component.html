@@ -1,0 +1,48 @@
+<div class="add-employee-container">
+  <h2>Add Employee</h2>
+  <form (ngSubmit)="addEmployee()"> <!-- Changed (submit) to (ngSubmit) for proper Angular form handling -->
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" id="first_name" [(ngModel)]="employee.first_name" name="first_name" required />
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" id="last_name" [(ngModel)]="employee.last_name" name="last_name" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="employee.email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select id="gender" [(ngModel)]="employee.gender" name="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="designation">Designation</label>
+      <input type="text" id="designation" [(ngModel)]="employee.designation" name="designation" required />
+    </div>
+    <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="number" id="salary" [(ngModel)]="employee.salary" name="salary" required />
+    </div>
+    <div class="form-group">
+      <label for="date_of_joining">Date of Joining</label>
+      <input type="date" id="date_of_joining" [(ngModel)]="employee.date_of_joining" name="date_of_joining" required />
+    </div>
+    <div class="form-group">
+      <label for="department">Department</label>
+      <input type="text" id="department" [(ngModel)]="employee.department" name="department" required />
+    </div>
+    <div class="form-group">
+      <label for="profilePicture">Profile Picture</label>
+      <input type="file" id="profilePicture" (change)="onFileSelected($event)" />
+    </div>
+    <button type="submit" class="add-employee-btn">Add Employee</button> <!-- Ensure button is styled -->
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
